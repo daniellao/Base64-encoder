@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<body>
+<table>
+    <tr>
+        <th>
+            <a href="index.php?data=get&download=false" id="start">URI openen</a>
+        </th>
+        <td>
+            <div class="form">
+                <form action="GetUri.php" method="post">
+                    <a id="link" href="index.php?data=set">bestand maken?</a>
+                    <?php
+                    if (isset($_SESSION['message']) && $_GET['download'] === 'false') {
+                        echo get_message();
+                    } else {
+                        if ($_GET['data'] === 'get' && $_GET['download'] === 'true') {
+                            echo get_message();
+                            echo "<div><a href=\"http://localhost/file-to-string/images/{$_SESSION['file_name']}\" id=\"button\" download>Opslaan</a><span id=\"file_name\">{$_SESSION['file_name']}</span></div>";
+                        } else {
+                            ?>
+                            <select id="select" name="open">
+                                <option disabled hidden selected>kies bestand</option>
+                                <optgroup label="jpg">
+                                    <?php
+                                    $result = getImages($connection);
+                                    while ($name = mysqli_fetch_assoc($result)) {
+                                        echo "<option value=\"{$name["file_name"]}\">{$name["file_name"]}</option>\"; ";
+                                    }
+                                    ?>
+                                </optgroup>
+                                <optgroup label="css">
+                                    <option></option>
+                                </optgroup>
+                            </select>
+                            <input id="get_submit_link" type="submit" name="submit" value="download">
+                            <?php
+                        }
+                    }
+                    ?>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

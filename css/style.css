@@ -1,0 +1,66 @@
+a#download {
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    appearance: button;
+    display: inline-block;
+    text-decoration: none;
+    color: ButtonText;
+    height: 20px;
+    width: 46px;
+}
+
+a#button {
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    appearance: button;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: ButtonText;
+    height: 22px;
+    width: 59px;
+}
+
+#file_name {
+    padding-left: 4px;
+}
+
+a#start {
+    text-decoration: none;
+    color: ButtonText;
+}
+
+#set_submit_link {
+    display: block;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+#get_submit_link {
+    display: inline-block;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#link {
+    display: block;
+    margin-left: 1px;
+}
+
+#textfield {
+    display: block;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+ border: 1px solid black;
+}
