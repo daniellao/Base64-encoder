@@ -1,2 +1,2 @@
-# quick and easy way to save files as text strings
+# quick and easy way to save binary as text
 # run install script in sql/SetupDb
